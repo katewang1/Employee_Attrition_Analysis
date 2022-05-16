@@ -1,0 +1,41 @@
+Personal_Information
+-
+Age INT
+Business_Travel VARCHAR
+Education INT
+Education_Field VARCHAR
+Employee_Number INT PK FK >- Work_Information.Employee_Number
+Environment_Satisfaction INT
+Gender VARCHAR
+Marital_Status VARCHAR
+Over_18 VARCHAR
+Work_Life_Balance INT
+
+Work_Information
+-
+Attrition VARCHAR
+Daily_Rate INT
+Department VARCHAR
+Distance_From_Home INT
+Employee_Count INT
+Employee_Number INT PK
+Hourly_Rate INT
+Job_Involvement INT
+Job_Level INT
+Job_Role VARCHAR
+Job_Satisfaction INT
+Monthly_Income INT
+Monthly_Rate INT
+Number_Companies_Worked INT
+Overtime VARCHAR
+Percent_Salary_Hike INT
+Performance_Rating INT
+Relations_Satisfaction INT
+Standard_Hours INT
+Stock_Options_Level INT
+Total_Working_Years INT
+Training_Times_Last_Year INT
+Years_at_Company INT
+Years_in_Current_Role INT
+Years_Since_Last_Promotion INT
+Years_With_Current_Manager INT
