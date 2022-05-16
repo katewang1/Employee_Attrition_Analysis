@@ -19,37 +19,30 @@ Reason we selected topic: Interested in looking at human behavior in a way that 
 
 Description of dataset: The attrition dataset is manufactured with fictional HR employee information by IBM data scientists.  It contains 1,470 instances or rows, and 35 columns or features including the target.  Features are a combination of personal employee data, answers to questionairres, employee's position-related data, and whether each employee has left the company.
 
-Questions we hope to answer with the data: which features are most heavily weighted.  Can the features be categorized so that they are ranked by the order that drives the most cause for leaving? Can the employee intervene on these causes?  When can or should they intervene?  How?  Potentially how employing these interventions can improve the employee and/or client experience.  
+Questions we hope to answer with the data: which features are most heavily weighted.  Can the features be categorized so that they are ranked by the order that drives the most cause for leaving? Can the employee intervene on these causes?  When can or should they intervene?  How?  Potentially how employing these interventions can improve the employee and/or client experience.
 
-Potential languages/libraries:  
+Communication Protocols: To use Slack channel #team-5 for group direction and questions, suggest initial tasks, request task assistance, resources, schedule group meetings.  To use Slack channel #proj-git to communicate when a given team member is working on a project/branch, inform when done with portion of project, and to request another project member look over and add comments or approve pull request.  GitHub pull request comments for suggested/requested changes to existing branch projects.  Meet by Zoom on Sundays or as needed to get on some page and discuss more complex issues and direction.
 
-    hvplot
-    plotly
-    PySpark
-    Python
-    Scikit-learn
-    SQL (if time)
+languages/libraries used thus far:  
+    
+    python
+    pandas
+    matplotlib
+    scikit-learn
+    
 </br>
 
 Potential machine-learning models:
-
-    Unsupervised (need to select)
-    supervised
-    Neural network (if time)
     
-    NEED TO COMPLETE: Team members will be expected to present a provisional machine learning model that stands in for the final machine learning model
-    and accomplishes the following:
-    -Takes in data from the provisional database
-    -Outputs label for input data
+    supervised logistic regression - to determine whether employee is likely to leave
+    supervised random forrest - to focus on feature importance
+    neural network (if time)
 </br>
 
 Database Integration:
 
-    Postgres
-    
-    NEED TO COMPLETE: Team members will be expected to present a provisional database that stands in for the final database and accomplishes the following:
-    -Sample data that mimics the expected final database structure or schema
-    -Draft machine learning model is connected to the provisional database
+    PgAdmin/Postgres - import CSVs and build DB for exploratory analysis by queries
+    Provisional database connection to machine learning model - to discuss with Mohan
 
 ## Results
 </br>
@@ -68,7 +61,6 @@ Database Integration:
     additional_dataset  
 
 **Software:**
-(I'm thinking this section should just be used to list just the software used to implement the code/libraries? Libraries, etc. to be explained in the project overview or explaining the results.  I moved the libraries under 1st segment for now).
 
     pgAdmin (add versions later)
     Google Collab
