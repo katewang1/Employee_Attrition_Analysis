@@ -22,7 +22,7 @@ Our analysis and predictions can assist employers with getting to the root of em
  9. Utilize most heavily weighted attributes to direct focus for finding additional dataset(s)
  10. Use new dataset(s) to perform additional exploratory analysis and project purpose
  11. Asses accuracy and optimize ML model(s)
- 12. Connect ML model to Flask app
+ 12. Connect ML model to web page via Flask app; build web page
  13. Design Flask to take in user inputs and provide outputs, and add additional stylings for web page
  14. Continue data exploration and create graphs via Tableau
  15. Present purpose, process and findings in Tableau slide presentation
@@ -63,7 +63,7 @@ Our analysis and predictions can assist employers with getting to the root of em
 **Database Integration:**
 
     PgAdmin/Postgres - import CSVs and build DB for exploratory analysis by queries
-    Provisional database connection to machine learning model - to discuss with Mohan
+    SQLAlchemy - provisional database connection to machine learning model
     
 ### 2nd Segment Deliverables (delete or work parts into other sections of readme later)
 
@@ -72,14 +72,13 @@ Our analysis and predictions can assist employers with getting to the root of em
     Include selected topic, reason topic was selected, description of source data and questions we hope to answer w/ the data in slides.
     Above questions answered in the 1st segment above.  Feel free to change as needed.
     ? Write and add description of the data exploration phase and description of the analysis phase of the project to slides - TBD?
-    ? Tableau instead of Google Slides?
+    Tableau Storyboard utilized for project explanation and website built for project demonstration.
     
 **Dashboard:**
 
-    Storyboard
-    Description of tool(s) that will be used to create the final dashboard
-    Description of interactive element(s)
-    ? Tableau instead of Google Slides
+    Tableau Storyboard (and website?)
+    Results of each ML model within Jupyter Notebook and exploratory analysis from Postgres will be used to create the final dashboard.
+    Description of interactive element(s) - TBD
     
  **GitHub**
  
