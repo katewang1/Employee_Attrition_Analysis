@@ -1,9 +1,7 @@
 # import libraries
 # add one for connection to aws or database
-# REMOVE JSONIFY
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 # import pickle
-# NUMPY NECESSARY?
 import numpy as np
 
 # boilerplate; create Flask app instance
@@ -14,16 +12,25 @@ app = Flask(__name__)
 
 # create root route
 @app.route("/")
-def hello_world():
-    hello_dict = {"say_hello": "hello beautiful ;) "}
-    return hello_dict
+def root():
+    return render_template("index.html")
 
 # create route for logistic regression ml model prediction
-@app.route("/attrition/logistic_regression") #, method=["POST", "GET"])
+@app.route("/attrition/logistic_regression", methods=["POST", "GET"])
 def lr():
-    features=request.form.values()
-    # print(features)
-    return features
+    # features=[request.form.values()]
+    # features_array=[np.array(features)]
+    # return 
+    
+    if request.method == "POST":
+        variable = request.form.get("test")
+        return f"<h1> {variable} </h1>"
+    return '''
+    <form method="POST">
+        <div><label>Test: <input type="text" name="test"></label></div>
+        <input type="submit" value="Submit" >
+    </form>
+    '''
 
 # create route for random forest ml model prediction
 # @app.route("/attrition/random_forest")
