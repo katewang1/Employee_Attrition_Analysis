@@ -87,3 +87,5 @@ FROM personal_factors AS p
 INNER JOIN work_factors AS w
 ON (p."Employee Number"=w."Employee Number");
 
+SELECT * FROM OG_dataset;
+
