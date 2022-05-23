@@ -34,3 +34,4 @@ ORDER BY "Monthly Income" DESC;
 SELECT * FROM emp_income;
 
 
+
