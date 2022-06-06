@@ -1,0 +1,337 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Attrition Prediction By Machine Learning</title>
+
+     <!-- add Bootstrap's content delivery(CDN) link -->
+     <link rel="stylesheet" 
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+     crossorigin="anonymous">
+
+    <!-- add style.css file link-->
+    <link rel = "stylesheet" type="text/css" href = "{{ url_for('static', filename='css/style.css') }}" >
+ </head>
+ <body>
+     
+    <!-- user input section -->
+    <div class = "container-fluid bg-dark">
+
+        <div class = "row bg-dark">
+            <div class = "col-md-4 bg-dark">
+                <!-- html-specific field form accepts user input-->
+                <form action="/test" method="POST" class = "bg-dark">
+                    <p>Filter Search</p>
+                    <ul class = "list-group bg-dark">
+                        <!-- add filter -->
+                        
+                            <!--add label and input-->
+                            <!-- CHANGE SOME OR ALL INPUTS TO DROPDOWN INSTEAD OF FILL-IN -->
+                            
+                            <!-- placeholder is an example for user;-->
+                            <!-- js looks for id when button clicks and function runs-->
+                            <!-- "value" creates pre-filled text; ADD FOR ALL FEATURES/VARIABLES -->
+                                                    
+                            <label for = "feature_1">Enter Age</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "b" 
+                            id = "feature_2" 
+                            value="32" 
+                            required = "required"/>
+                            <br>
+                        
+                        
+                            <label for = "feature_2">Enter Business Travel</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "c" 
+                            id = "feature_3" 
+                            value="25" 
+                            required = "required"/>
+                            <br>
+
+                            <label for = "feature_3">Enter Department</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                        
+                            <label for = "feature_4">Enter Monthly Income in USDDia</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_5">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_6">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_7">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_8">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_9">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_10">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+
+                            <label for = "feature_11">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_12">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_13">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_14">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+
+                            <label for = "feature_15">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_16">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_17">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_18">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_19">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_20">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_21">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_22">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_23">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_24">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_25">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_26">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            <label for = "feature_27">Enter Monthly Income in USD</label>
+                            <br>
+                            <input 
+                            name = "features" 
+                            type = "text" 
+                            placeholder = "a" 
+                            id = "feature_1" 
+                            value="3090" 
+                            required = "required"/>
+                            <br>
+                            
+                        <!-- add filter button -->
+                        <button type="submit" class="btn btn-outline-light btn-primary btn-lg">Predict</button>
+                    </ul>
+                </form>
+            </div>
+
+
+            <div>
+                <!-- THIS SECTION FOR THE PERSONAL/PROFESSIONAL FACTORS SEARCH, MOVE FROM ABOVE -->
+            </div>
+            <div class = "col-md-4">
+                <h4>{{pred}}<br></h4>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- d3.js library -->
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.js></script>
+    
+    <!-- EXTERNAL DATA FILE BELOW -->
+ </body>
+ </html>
