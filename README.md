@@ -47,7 +47,8 @@ Our analysis and predictions can assist employers with getting to the root of em
     
     python
     pandas
-    matplotlib
+    matplotlib.pyplot
+    seaborn
     scikit-learn
     sql
     
@@ -55,9 +56,11 @@ Our analysis and predictions can assist employers with getting to the root of em
 
 **Potential machine-learning models:**
     
-    supervised logistic regression - to determine whether employee is likely to leave
-    supervised random forrest - to focus on feature importance
-    neural network (if time)
+    supervised logistic regression: 
+        - binary classifier to predict whether an employee will leave their current job
+    supervised random forest: 
+        - to focus on feature importance
+    neural network: 
 </br>
 
 **Database Integration:**
@@ -86,13 +89,32 @@ Our analysis and predictions can assist employers with getting to the root of em
     Will require additional exploration w/ additional dataset
     Some code necessary to complete ML model - need to push and merge to main/connect with preprocessing
     
-**ML Model**
+**Logistic Regression ML Model**
 
-    Description of preliminary data preprocessing - Joey
-    Description of preliminary feature engineering and feature selection, including the decision making process - Joey
+    Data Preprocessing:
+    There were multiple column that held ambiguous data and were dropped from the dataframe. Categorical data including the target variable was then encoded using a label encoder. Multicollinearity was an issue, so four more features were dropped in the hope of enhancing the accuracy of the model. The non-encoded columns were then scaled using the StandardScaler(). 
+
+    Training and Testing Groups:
+    The data was the split into training and testing groups. There was a very large discrepancy between the majority and minority classes of the target varaible, so I used the SMOTE oversampling technique to raise the amount of the minority class to the majority class.
+
+    Model:
+    The logistic model was then created and run. The model's accuracy wasabout 75.5%. The image below shows the classification report for the model. As one can see, the model's precision was particular poor for the Yes values. 
+
+    ![](resources/classification_report.png)
+
+**Random Forest ML Model**
+
+    Description of preliminary data preprocessing - 
+    Description of preliminary feature engineering and feature selection, including the decision making process - 
     Description of how data was split into training and testing sets - Stephen
     Explanation of model choice, including limitations and benefits - Stephen
-       
+
+**Neural Network ML Model**
+
+    Description of preliminary data preprocessing - 
+    Description of preliminary feature engineering and feature selection, including the decision making process - 
+    Description of how data was split into training and testing sets - Stephen
+    Explanation of model choice, including limitations and benefits - Stephen
 **Database Integration**   
 
     DB stores static data for use during the project - check
@@ -105,7 +127,18 @@ Our analysis and predictions can assist employers with getting to the root of em
 ## Results
 </br>
 
-(Which factors were most heavily weighted?  Individually and/or by categories of sorts?  Personal, work environment, etc.  Can we improve attrition rate by adjusting the inputs?)
+(Which factors were most heavily weighted?
+- Age
+- Job Level
+- Marital Status
+- Monthly Income
+- Overtime
+- Stock Option Level
+- Years at Company
+- Years in Current Role
+- Years with Current Manager
+
+  Individually and/or by categories of sorts?  Personal, work environment, etc.  Can we improve attrition rate by adjusting the inputs?)
 </br>
 </br>
 
@@ -122,6 +155,9 @@ Our analysis and predictions can assist employers with getting to the root of em
 
     pgAdmin (add versions later)
     Google Collab
+    Python
+    PostgreSQL
+    AWS
     Jupyter Notebook
     VS Code
     Tableau   
