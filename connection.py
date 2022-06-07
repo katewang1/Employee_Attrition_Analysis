@@ -1,84 +1,6 @@
 # import dependencies
 import os
 import pandas as pd
-import numpy as np
-# from getpass import getpass
-# import sqlalchemy
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
-# , func
-# from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from imblearn.over_sampling import RandomOverSampler
-from sklearn.metrics import balanced_accuracy_score
-import pickle
-from config import secret
-
-# def train_model():
-    
-#     # connect to database
-#     args ={
-#         'host':"ogdataset.c11hekhsylui.us-west-1.rds.amazonaws.com",
-#         'port':'5432',
-#         'database':"og_dataset",
-#         'user':"attritionProject",
-#         'password': secret
-#     }
-#     engine = create_engine("postgresql://{user}:{password}@{host}/{database}".format(**args))
-#     connection = engine.connect()
-
-#     #reflect existing database into new model
-#     df=pd.read_sql('SELECT * FROM new_encoded_data', connection)
-
-#     # split data between features and target
-#     # drop strongly correlated columns to improve model
-#     df.drop(['Total Working Years','Years In Current Role','Job Level', 'Years With Current Manager'],axis=1, inplace=True)
-#     X = df.drop("Attrition",1).values
-#     y = df["Attrition"].values
-#     # target = ["Attrition"]
-#     # y = df.loc[:,target].copy()
-
-#     # Split the preprocessed data into a training and testing dataset
-#     X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y)
-
-#     # Create a StandardScaler instances
-#     # scaler = StandardScaler()
-
-#     # Fit the StandardScaler
-#     # X_scaler = scaler.fit(X_train)
-
-#     # Scale the data
-#     # X_train_scaled = X_scaler.transform(X_train)
-#     # X_test_scaled = X_scaler.transform(X_test)
-
-#     # Using random oversampling increase the number of minority class (Yes values)
-#     ros = RandomOverSampler(random_state=1)
-#     X_resampled, y_resampled = ros.fit_resample(X_train, y_train)
-
-#     # Train the Logistic Regression model using the resampled data
-#     # CHANGE Y FROM COLUMN-VECTOR TO 1D ARRAY W/ ravel()!!! (.values yields numpy array, .ravel changes shape to (n,))
-#     model = LogisticRegression()
-#     # model.fit(X_train_scaled, y_train.values.ravel())
-#     model.fit(X_resampled, y_resampled)
-
-#     # pickling... serialization
-#     # write to model in external model.pkl file
-#     model_file = "resources/model.pkl"
-#     pickle.dump(model, open(model_file, "wb"))
-
-#     # scaler_file = "resources/scaler.pkl"
-#     # pickle.dump(scaler, open(scaler_file, "wb"))
-
-# # def get_model():
-# #     # read from external pickle files
-# #     model_file = "resources/model.pkl"
-# #     if not os.path.exists(model_file):
-# #         train_model()
-# #     return pickle.load(open(model_file, "rb"))
-# #     # scaler_file = "resources/scaler.pkl"
-# #     # scaler = pickle.load(open(scaler_file, "rb"))    
 
 def get_data():
     df = pd.read_json("data.json")
@@ -93,6 +15,33 @@ def label(df):
         "Monthly Income": df.iloc[0][14]
     }
     return dct
+
+def get_features_list():
+    return [
+    ('age', 100,'Age', 'Numerical Value'),
+    ('business_travel', 100,'Business Travel', '1=No Travel, 2=Travel Frequently, 3=Tavel Rarely'),
+    ('department', 100,'1=HR, 2=R&D, 3=Sales'),
+    ('distance_from_home', 100,'Distance from Home','Distance from work to home'),
+    ('education_level', 100,'Education Level','Numerical Value'),
+    ('education_field', 100,'Education Field','1=HR, 2=LIFE SCIENCES, 3=MARKETING, 4=MEDICAL SCIENCES, 5=OTHERS, 6= TEHCNICAL'),
+    ('environment_satisfaction', 100,'Environment Satisfaction','Numerical Value'),
+    ('gender', 100,'Gender','1=FEMALE, 2=MALE'),
+    ('job_involvement', 100,'Job Involvement','Numerical Value'),
+    ('job_role', 100,'Job Role','1=HC REP, 2=HR, 3=LAB TECHNICIAN, 4=MANAGER, 5= MANAGING DIRECTOR, 6= REASEARCH DIRECTOR, 7= RESEARCH SCIENTIST, 8=SALES EXECUTIEVE, 9= SALES REPRESENTATIVE'),
+    ('job_satisfaction', 100,'Job Satisfaction','Numerical Value'),
+    ('marital_status', 100,'Marital Status','1=DIVORCED, 2=MARRIED, 3=SINGLE'),
+    ('monthly_income', 100,'Monthly Income','Monthly Salary'),
+    ('number_companies_worked', 100,'Number Companies Worked',''),
+    ('overtime', 100,'Overtime','1=NO, 2=YES'),
+    ('percent_salary_hike', 100,'Percent Salary Hike',''),
+    ('performance_rating', 100,'Performance Rating',''),
+    ('relationship_satisfaction', 100,'Relationship Satisfaction',''),
+    ('stock_option_level', 100,'Stock Option Level',''),
+    ('training_times_last_year', 100,'Training Times Last Year','Hours spent training'),
+    ('work_life_balance', 100,'Work Life Balance','Time spent between work and outside'),
+    ('years_at_company', 100,'Years at Company',''),
+    ('years_since_last_promotion', 100,'Years Since Last Promotion','')
+]
 
 def result(pred_proba):
 
