@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attrition Prediction By Machine Learning</title>
+
+    <!-- add style.css file link-->
+   <link rel = "stylesheet" type="text/css" href = "{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+   <link rel = "stylesheet" type="text/css" href = "{{ url_for('static', filename='css/style.css') }}" >
+</head>
+<body>
+    
+   <!-- user input section -->
+   <div class = "container-fluid">
+
+       <div class = "row">
+           <div class = "col-md-7">
+               <!-- html-specific field form accepts user input-->
+               <form action="/test" method="POST">
+                   <p>Filter Search</p>
+                       <!-- add filter -->
+                       
+                           <!--add label and input-->
+                           <!-- CHANGE SOME OR ALL INPUTS TO DROPDOWN INSTEAD OF FILL-IN -->
+                           
+                           <!-- placeholder is an example for user;-->
+                           <!-- js looks for id when button clicks and function runs-->
+                           <!-- "value" creates pre-filled text; ADD FOR ALL FEATURES/VARIABLES -->
+                            
+                           {% for feature in features_list %}
+
+                           <label for = "{{ feature[0] }}">{{ feature[2] }}</label>
+                                <br>
+                                <input 
+                                name = "{{ feature[0] }}" 
+                                type = "text" 
+                                placeholder = "{{ feature[1] }}" 
+                                id = "{{ feature[0] }}" 
+                                value = "{{ feature[1] }}" 
+                                required = "required"/>
+                                <br>
+
+                            {% endfor %}      
+                             
+                        <!-- add filter button -->
+                        <button type="submit" class="btn btn-outline-light btn-primary btn-lg">Predict</button>
+                </form>
+            </div>
+
+
+            <div>
+                <!-- Keys for each feature -->
+            </div>
+            <div class = "col-md-12">
+                <h4>{{pred}}<br></h4>
+            </div>
+        </div>
+
+    </div>
+
+   </div>
+
+   <!-- link to d3.js library and other files-->
+   <script src=https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.js></script>
+   <script src="static/js/app.js"></script>
+</body>
+</html>

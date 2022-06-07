@@ -19,7 +19,6 @@ from config import secret
 # def train_model():
     
 #     # connect to database
-#     # secret = getpass('Enter the secret value: ')
 #     args ={
 #         'host':"ogdataset.c11hekhsylui.us-west-1.rds.amazonaws.com",
 #         'port':'5432',
@@ -34,7 +33,8 @@ from config import secret
 #     df=pd.read_sql('SELECT * FROM new_encoded_data', connection)
 
 #     # split data between features and target
-#     # X = df[["Age", "Distance from Home", "Monthly Income"]].values
+#     # drop strongly correlated columns to improve model
+#     df.drop(['Total Working Years','Years In Current Role','Job Level', 'Years With Current Manager'],axis=1, inplace=True)
 #     X = df.drop("Attrition",1).values
 #     y = df["Attrition"].values
 #     # target = ["Attrition"]
@@ -71,14 +71,14 @@ from config import secret
 #     # scaler_file = "resources/scaler.pkl"
 #     # pickle.dump(scaler, open(scaler_file, "wb"))
 
-# def get_model():
-#     # read from external pickle files
-#     model_file = "resources/model.pkl"
-#     if not os.path.exists(model_file):
-#         train_model()
-#     return pickle.load(open(model_file, "rb"))
-#     # scaler_file = "resources/scaler.pkl"
-#     # scaler = pickle.load(open(scaler_file, "rb"))    
+# # def get_model():
+# #     # read from external pickle files
+# #     model_file = "resources/model.pkl"
+# #     if not os.path.exists(model_file):
+# #         train_model()
+# #     return pickle.load(open(model_file, "rb"))
+# #     # scaler_file = "resources/scaler.pkl"
+# #     # scaler = pickle.load(open(scaler_file, "rb"))    
 
 def get_data():
     df = pd.read_json("data.json")
@@ -97,8 +97,8 @@ def label(df):
 def result(pred_proba):
 
     if pred_proba[0][0] < pred_proba[0][1]:
-        return f"The model predicts that your employee will leave the company with a {pred_proba[0][1] * 100:.2f}% probability."
+        return f"The model predicts with a {pred_proba[0][1] * 100:.2f}% probability that your employee WILL leave the company."
     elif pred_proba[0][0] == pred_proba[0][1]:
         return f"The model predicts that your employee as likely to remain with the company as they are staying."
     else:
-        return f"The model predicts that your employee will NOT leave the company with {pred_proba[0][0] * 100:.2f}% probability."
+        return f"The model predicts with {pred_proba[0][0] * 100:.2f}% probability that your employee WILL NOT leave the company."

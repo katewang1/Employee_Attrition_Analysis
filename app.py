@@ -1,22 +1,22 @@
-# import libraries
+# import dependencies
 # add one for connection to aws or database
 from flask import Flask, render_template, request, jsonify
 import pickle
-import numpy as np
-from config import Config, secret
+# import numpy
+# from config import Config
 import connection
 
 # boilerplate; create Flask app instance
 app = Flask(__name__)
 
 # pull configuration from external config file
-app.config.from_object(Config)
+# app.config.from_object(Config)
 
 # read from external pickle files
-# model_file = "resources/model.pkl"
-# model = pickle.load(open(model_file, "rb"))
-# scaler_file = "resources/scaler.pkl"
-# scaler = pickle.load(open(scaler_file, "rb"))    
+model_file = "resources/model.pkl"
+model = pickle.load(open(model_file, "rb"))
+scaler_file = "resources/scaler.pkl"
+scaler = pickle.load(open(scaler_file, "rb"))    
 
 # get dataframe
 # connection.get_data()
@@ -24,7 +24,8 @@ app.config.from_object(Config)
 # create root route 
 @app.route("/", methods=["GET", "POST"])
 def root():
-    return render_template("index.html")
+    features_list = get_features_list()
+    return render_template("index_2.html", features_list = features_list)
 
 # create route for prediction result
 @app.route("/test", methods=["GET", "POST"])
@@ -35,11 +36,10 @@ def testing():
     # EXPLAIN THE MAGIC
     if request.method == "POST":
 
-        model = connection.get_model()
-        # SCALE DATA?
-        features=[[int(x) for x in features]]
-        print("features: ", features, type(features))
-        pred_proba = model.predict_proba(features)
+        # features_scaled = scaler.fit_transform(features)
+        features_array=[[int(x) for x in features]]
+        print("features array: ", features_array, type(features))
+        pred_proba = model.predict_proba(features_array)
         print("prediction is", pred_proba, type(pred_proba))
         return jsonify(connection.result(pred_proba))
 
@@ -68,6 +68,33 @@ def testing():
 #         <input type="submit" value="Submit" >
 #     </form>
 #     '''
+
+def get_features_list():
+    return [
+    ('age', 100,'Age'),
+    ('business_travel', 100,'Business Travel'),
+    ('department', 100,'Department'),
+    ('distance_from_home', 100,'Distance from Home'),
+    ('education_level', 100,'Education Level'),
+    ('education_field', 100,'Education Field'),
+    ('environment_satisfaction', 100,'Environment Satisfaction'),
+    ('gender', 100,'Gender'),
+    ('job_involvement', 100,'Job Involvement'),
+    ('job_role', 100,'Job Role'),
+    ('job_satisfaction', 100,'Job Satisfaction'),
+    ('marital_status', 100,'Marital Status'),
+    ('monthly_income', 100,'Monthly Income'),
+    ('number_companies_worked', 100,'Number Companies Worked'),
+    ('overtime', 100,'Overtime'),
+    ('percent_salary_hike', 100,'Percent Salary Hike'),
+    ('performance_rating', 100,'Performance Rating'),
+    ('relationship_satisfaction', 100,'Relationship Satisfaction'),
+    ('stock_option_level', 100,'Stock Option Level'),
+    ('training_times_last_year', 100,'Training Times Last Year'),
+    ('work_life_balance', 100,'Work Life Balance'),
+    ('years_at_company', 100,'Years at Company'),
+    ('years_since_last_promotion', 100,'Years Since Last Promotion')
+]
 
 # boilerplate; debugger on
 if __name__ == "__main__":
