@@ -30,9 +30,13 @@
                            <!-- "value" creates pre-filled text; ADD FOR ALL FEATURES/VARIABLES -->
                             
                            {% for feature in features_list %}
+                            <div class = "row"></div>
 
-                           <label for = "{{ feature[0] }}">{{ feature[2] }}</label>
-                                <br>
+                            <div class = "col">
+                                <label for = "{{ feature[0] }}">{{ feature[2] }}</label>
+                            </div>
+                            
+                            <div class = "col">
                                 <input 
                                 name = "{{ feature[0] }}" 
                                 type = "text" 
@@ -40,8 +44,12 @@
                                 id = "{{ feature[0] }}" 
                                 value = "{{ feature[1] }}" 
                                 required = "required"/>
-                                <br>
+                            </div>
+                            
+                            <div class = "col">
 
+                            </div>
+                           
                             {% endfor %}      
                              
                         <!-- add filter button -->
