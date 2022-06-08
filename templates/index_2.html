@@ -16,10 +16,10 @@
    <div class = "container-fluid">
 
        <div class = "row">
-           <div class = "col-md-7">
+           <div class = "col-md-12">
                <!-- html-specific field form accepts user input-->
-               <form action="/result" method="POST">
-                   <p>Attrition Prediction</p>
+               <form action="/process" method="POST">
+                   <p class = "h1">Attrition Prediction</p>
                        <!-- add filter -->
                        
                            <!--add label and input-->
@@ -48,20 +48,20 @@
                             {% endfor %}         
                              
                         <!-- add filter button -->
-                        <button type="submit" class="btn btn-outline-light btn-primary btn-lg">Predict</button>
+                        <body>
+                            <!-- <button type="submit" class="btn btn-lg">Predict</button> -->
+                            <p><input type = "submit" value = "Predict" /></p>
+                        </body>
                 </form>
             </div>
 
             <div class = "col-md-12">
                 <h4>{{pred}}<br></h4>
             </div>
+
         </div>
 
     </div>
 
-   <!-- link to d3.js library and other files-->
-   <script src=https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.js></script>
-   <script src="static/js/app.js"></script>
-   <script src="static/css/style.css"></script>
 </body>
 </html>

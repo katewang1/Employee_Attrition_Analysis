@@ -1,0 +1,50 @@
+<!-- replace portions of base.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Attrition Prediction {% endblock %}</h1>
+    <!-- user input section -->
+   <div class = "container-fluid">
+
+        <div class = "row justify-content-start">
+            <div class = "col-md-12">
+                <!-- html-specific field form accepts user input-->
+                <form action="/result" method="POST">
+                
+                    <!--add label and input-->
+                    {% for feature in features_list %}
+                    <div class="row">
+                        
+                        <div class="col-md-2">
+                            <label for = "{{ feature[0] }}">{{ feature[2] }}</label>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <input 
+                                name = "{{ feature[0] }}" 
+                                type = "text" 
+                                placeholder = "{{ feature[1] }}" 
+                                id = "{{ feature[0] }}"  
+                                required = "required"/>
+                        </div>
+                        
+                        <div class="col-md-7">
+                            {{ feature[3] }}
+                        </div>
+
+                    </div>
+                    {% endfor %}         
+                    
+                    <!-- add filter button -->
+                    <body>
+                        <!-- <button type="submit" class="btn btn-lg">Predict</button> -->
+                        <p><input type = "submit" class = "btn" value = "Predict" /></p>
+                    </body>
+                
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

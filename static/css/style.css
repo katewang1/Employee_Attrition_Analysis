@@ -1,10 +1,23 @@
  body {
-    color: #000000
-    /* color: #f7f7f7; */
+    color: #f7f7f7;
+    background-color: #313131 
 }
 
 .jumbotron {
-    /* background-image: url("../images/nasa.jpg"); */
+    /* background-image: url("../resources/app_pic.jpg"); */
     background-size: 100% 100%;
     text-align: center;
 }
+
+/* change button aesthetic */
+.button {
+    display: block;
+    background-color: #f0ceff;
+    font-size: 24px;
+    text-align: center;
+    border: blue
+}
+
+p {
+    font-family: arial;
+  }

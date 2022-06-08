@@ -1,5 +1,5 @@
 # import dependencies
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 import pickle
 import connection
 from pprint import pprint
@@ -11,18 +11,15 @@ app = Flask(__name__)
 model_file = "resources/model.pkl"
 model = pickle.load(open(model_file, "rb"))   
 
-# get dataframe
-# connection.get_data()
-
 # create root route 
 @app.route("/", methods=["GET", "POST"])
-def root():
+def pred():
     features_list = connection.get_features_list()
-    return render_template("index_2.html", features_list = features_list)
+    return render_template("index_1.html", features_list = features_list)
 
 # create route for prediction result
-@app.route("/result", methods=["GET", "POST"])
-def testing():
+@app.route("/process", methods=["GET", "POST"])
+def process():
     '''DOC STRING HERE'''
 
     feature_dict = {}
@@ -38,7 +35,12 @@ def testing():
         # print("features array: ", features_array, type(features_array))
         pred_proba = model.predict_proba(features_array)
         # print("prediction is", pred_proba, type(pred_proba))
-        return jsonify(connection.result(pred_proba))
+        result_string = jsonify(connection.result(pred_proba))
+        # return render_template("index_2.html", result_string)
+        return render_template("result.html", result = result_string)
+    
+    ## redirect to homepage after process data
+    return redirect('/', code=302)
 
 # boilerplate; debugger on
 if __name__ == "__main__":
