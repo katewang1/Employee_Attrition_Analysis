@@ -1,14 +1,13 @@
 # Employee Attrition Prediction and Analysis
-## *Predicting Attrition and Exploring Reasons Behind Why People are Shifting Jobs*
-## Link to Dashboard:
-
-<br>
-
-### Overview: 
+## *Predicting Employee Attrition and Exploring it's Causes*
+### Link to Dashboard:
 ---
-#### Purpose
 </br>
-Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training, and improve overall organizational culture and employee sentiment.  While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks.  
+
+## Why is understanding WHEN and WHY employees quit important?
+
+Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training and improves overall organizational culture and employee sentiment. It is symbiotic, one of the biggest testaments of whether a system is successful and will last.  Focusing on employee retention benefits not just the organization’s success and longevity, but also the employees, so the system continues to feed itself.  And employee attrition affects EVERY industry.
+
 </br>
 </br>
 
@@ -87,6 +86,10 @@ Using Python's seaborn library and Tableau, trends about the data were uncovered
 ![](Exploratory_Analysis/images/YrsAtCompany_barplot.png)
 </br>
 </br>
+
+## Summary
+While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks. 
+
 
 
 ### Software/Tools Used:
