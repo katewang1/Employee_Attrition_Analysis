@@ -3,23 +3,28 @@
 
 {% block content %}
     <h1>{% block title %} Attrition Prediction {% endblock %}</h1>
+    <hr>
     <!-- user input section -->
    <div class = "container-fluid">
 
         <div class = "row justify-content-start">
             <div class = "col-md-12">
                 <!-- html-specific field form accepts user input-->
-                <form action="/result" method="POST">
-                
+                <form action="{{url_for("process")}}" method="POST">
+                    <div class="row">
+                        <h3 style = "text-align: center; font-family: impact; color: #d8d8d8">Purpose</h3>
+                        <p style = "font-family: Arial; color: #d8d8d8">Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training, and improve overall organizational culture and employee sentiment. While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks.</p>
+                    </div>
                     <!--add label and input-->
                     {% for feature in features_list %}
+                    
                     <div class="row">
                         
                         <div class="col-md-2">
                             <label for = "{{ feature[0] }}">{{ feature[2] }}</label>
                         </div>
                         
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <input 
                                 name = "{{ feature[0] }}" 
                                 type = "text" 
@@ -38,7 +43,17 @@
                     <!-- add filter button -->
                     <body>
                         <!-- <button type="submit" class="btn btn-lg">Predict</button> -->
-                        <p><input type = "submit" class = "btn" value = "Predict" /></p>
+                        <p style = "display: block;
+                        background-color: #8AD7DE;
+                        text-align: center;
+                        border: #B2C8CA">
+                            <input type = "submit" class = "btn" value = "Predict" 
+                            style = "color: #202020;
+                            font-size: 2em;
+                            margin-left: 50px;
+                            text-decoration: none;
+                            font-family: impact;"/>
+                        </p>
                     </body>
                 
                 </form>

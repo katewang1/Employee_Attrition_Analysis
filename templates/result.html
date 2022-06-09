@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <h1>{% block title %} Result {% endblock %}</h1>
+
     <!doctype html>
-    <title>Example</title>
+    <title></title>
     <style>
     * {
         box-sizing: border-box; 
@@ -41,14 +40,15 @@
     </style>
     <body>
         <form action="/result" method = "POST"></form>
-            <nav class="col-1">Nav</nav>
+            <!-- <nav class="col-1">Nav</nav> -->
             <div class="col-2">
-                <header>Header</header>
+                <h1>{% block title %} Result {% endblock %}</h1>
                 <main class="content">
+                {% block content %}
                 <article>{{ result }}</article>
+                {% endblock %}
                 </main>
-                <footer>Footer</footer>
+                <!-- <footer>Footer</footer> -->
             </div>
         </form>
     </body>
-{% endblock %}

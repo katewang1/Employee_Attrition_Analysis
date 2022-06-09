@@ -8,12 +8,12 @@
 
     <style>
         
-        nav a {
+        h1 {
             color: #85B6BB;
-            font-size: 5em;
+            font-size: 10em;
             margin-left: 50px;
             text-decoration: none;
-            font-family: impact
+            font-family: impact;
         }
 
     </style>
@@ -24,14 +24,9 @@
 
 </head>
 <body>
-    <!-- navigation bar (click-able text) has 2 links; one to index view function in app.py, the other to about page -->
-    <nav>
-        <a href="{{ url_for('pred') }}">Prediction</a>
-        <a href="{{ url_for('process') }}">Result</a>
-    </nav>
-    <hr>
     <div class="content">
         {% block content %} {% endblock %}
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
 </body>
 </html>
