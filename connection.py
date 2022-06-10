@@ -1,17 +1,14 @@
-# import dependencies
-import os
-import pandas as pd
-
-def label(df):
-    # create dictionary with first row values from dataset
-    dct = {
-        "Age": df.iloc[0][0],
-        "Distance From Home": df.iloc[0][4],
-        "Monthly Income": df.iloc[0][14]
-    }
-    return dct
-
+# labels textbox information
 def get_features_list():
+    ''' 
+    The function provides labels for user textboxs.
+
+    Parameters:
+        None. 
+
+    Returns:
+        list: The list which provides variable names, textbox placeholder values, bextbox labels, and keys.
+    '''
     return [
     ('age', 41,'Age', ''),
     ('business_travel', 2,'Business Travel', '1=No Travel, 2=Travel Frequently, 3=Travel Rarely'),
@@ -40,9 +37,22 @@ def get_features_list():
 
 def result(pred_proba):
 
+    '''
+    The function provides the result based on user input.
+
+    Parameters:
+        pred_prob(numpy array): The variable that compares the probaility of attrition and remaining with company.
+
+    Returns:
+        result(str): The result that contains the probability percentage.
+    '''
+
     if pred_proba[0][0] < pred_proba[0][1]:
-        return f"The model predicts with a {pred_proba[0][1] * 100:.2f}% probability that your employee WILL leave the company."
+        result = f"The model predicts with a {pred_proba[0][1] * 100:.2f}% probability that your employee WILL leave the company."
+        return result
     elif pred_proba[0][0] == pred_proba[0][1]:
-        return f"The model predicts that your employee as likely to remain with the company as they are staying."
+        result = f"The model predicts that your employee as likely to remain with the company as they are staying."
+        return result
     else:
-        return f"The model predicts with {pred_proba[0][0] * 100:.2f}% probability that your employee WILL NOT leave the company."
+        result = f"The model predicts with {pred_proba[0][0] * 100:.2f}% probability that your employee WILL NOT leave the company."
+        return result
