@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attrition Prediction</title>
-    <hr>
+    <title>
+        Attrition Prediction
+    </title>
 
     <style>
         
         h1 {
             color: #85B6BB;
-            font-size: 10em;
+            font-size: 7em;
             margin-left: 50px;
             text-decoration: none;
             font-family: impact;
@@ -34,9 +35,11 @@
                 <div class = "col-md-12">
                     <!-- html-specific field form accepts user input-->
                     <form action="{{url_for("process")}}" method="POST">
+                        <h1>Attrition Prediction</h1>
+                        <hr>
                         <div class="row">
-                            <h3 style = "text-align: center; font-family: impact; color: #d8d8d8">Purpose</h3>
-                            <p style = "font-family: Arial; color: #d8d8d8">Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training, and improve overall organizational culture and employee sentiment. While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks.</p>
+                            <h3 style = "text-align: center; font-family: impact; color: #d8d8d8">About</h3>
+                            <p style = "font-family: Arial; color: #d8d8d8">The purpose of this project is to determine the possible variables that would influence an employee to leave their workplace and the relative importance of these features. We also aim to utilize a machine learning model to predict the probability that an employee will decide to leave. This is accomplished by saving and retrieving the model through serialization and deserialization, creating a Flask app to retrieve an employee's information and handle the data. Furthermore, we conducted exploratory data analysis to detect trends from each feature as they relate to the target of attrition.</p>
                         </div>
                         <!--add label and input-->
                         {% for feature in features_list %}
@@ -66,16 +69,9 @@
                         <!-- add filter button -->
                         <body>
                             <!-- <button type="submit" class="btn btn-lg">Predict</button> -->
-                            <p style = "display: block;
-                            background-color: #8AD7DE;
-                            text-align: center;
-                            border: #B2C8CA">
+                            <p style = "display: block; background-color: #8AD7DE; text-align: center; border: #B2C8CA">
                                 <input type = "submit" class = "btn" value = "Predict" 
-                                style = "color: #202020;
-                                font-size: 2em;
-                                margin-left: 50px;
-                                text-decoration: none;
-                                font-family: impact;"/>
+                                style = "color: #202020;font-size: 2em; margin-left: 50px; text-decoration: none; font-family: impact;"/>
                             </p>
                         </body>
                     
