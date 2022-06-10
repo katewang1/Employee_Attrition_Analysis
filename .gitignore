@@ -1,5 +1,5 @@
-# add files
-config.py
+# add file
+.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

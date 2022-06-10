@@ -1,73 +1,63 @@
-# import libraries
-# add one for connection to aws or database
-from flask import Flask, render_template, request, jsonify
+# import dependencies
+from flask import Flask, render_template, request, jsonify, redirect
 import pickle
-import numpy as np
-from config import Config, secret
 import connection
+# from pprint import pprint
 
 # boilerplate; create Flask app instance
 app = Flask(__name__)
 
-# pull configuration from external config file
-app.config.from_object(Config)
+# retrieve model from external file
+model_file = "resources/model.pkl"
+model = pickle.load(open(model_file, "rb"))   
 
-# read from external pickle files
-# model_file = "resources/model.pkl"
-# model = pickle.load(open(model_file, "rb"))
-# scaler_file = "resources/scaler.pkl"
-# scaler = pickle.load(open(scaler_file, "rb"))    
-
-# get dataframe
-# connection.get_data()
-
-# create root route 
+# create root route
 @app.route("/", methods=["GET", "POST"])
-def root():
-    return render_template("index.html")
+def pred():
+
+    '''
+    The function presents user with front page of app and retrieve user input.
+    
+    Parameters:
+        get_features_list: The function that consists of variable name, example value, variable shown in brower, and key for input.
+    
+    Returns:
+        html: The homepage which contains textboxes for user input.
+    '''
+
+    features_list = connection.get_features_list()
+    return render_template("index_3.html", features_list = features_list)
 
 # create route for prediction result
-@app.route("/test", methods=["GET", "POST"])
-def testing():
-    '''DOC STRING HERE'''
-    features = request.form.getlist("features")
+@app.route("/process", methods=["GET", "POST"])
+def process():
 
-    # EXPLAIN THE MAGIC
+    '''
+    The function takes in user input and uses model to predict the probability of attrition.
+
+    Parameters:
+        get_features_list: The function which each feature of user input is assigned to the corresponding variable.
+
+    Returns:
+        result_string(str): The variable that utilizes the result function to make a prediction based on model after features are converted to an array. 
+    '''
+
+    feature_dict = {}
+    features_list = connection.get_features_list()
+    for feature in features_list:
+        feature_dict[feature[0]] = request.form[feature[0]]
+    # pprint(feature_dict)
     if request.method == "POST":
-
-        model = connection.get_model()
-        # SCALE DATA?
-        features=[[int(x) for x in features]]
-        print("features: ", features, type(features))
-        pred_proba = model.predict_proba(features)
-        print("prediction is", pred_proba, type(pred_proba))
-        return jsonify(connection.result(pred_proba))
-
-        # print(connection.label)
-        # features=[[int(x) for x in features]]
-        # print("features: ", features, type(features))
-        # features_array=[np.array(features)]
-        # print("features_array", features_array, type(features_array))
-        # pred_proba = model.predict_proba(features)
+        features_array=[[int(x) for x in feature_dict.values()]]
+        # print("features_array is ", features_array, type(features_array))
+        pred_proba = model.predict_proba(features_array)
         # print("prediction is", pred_proba, type(pred_proba))
-        # output = "{0:.{1}f}".format(prediction[0][1], 2)
-        # print("output is", output)
-        # return render_template("index.html", placeholder = connection.label , pred = "Based on existing dataset the model predict that {}".format(output)) 
-
-# create route for prediction using best
-# @app.route("/pre", methods=["GET", "POST"])
-# def attrition():
+        result_string = connection.result(pred_proba)
+        # print(result_string)
+        return jsonify(result_string)
     
-#     # variable = request.form.get("test")
-#     # return f"<h1> {variable} </h1>"
-
-#     return '''
-#     <form method="POST">
-#         <div><label>Test: 
-#         <input type="text" name="test"></label></div>
-#         <input type="submit" value="Submit" >
-#     </form>
-#     '''
+    ## redirect to homepage
+    return redirect('/', code=302)
 
 # boilerplate; debugger on
 if __name__ == "__main__":
