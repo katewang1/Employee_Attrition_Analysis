@@ -1,4 +1,4 @@
-# Employee Attrition Prediction and Analysis
+# The Tale of Flight Risk & the Holy Grail of Corporate Happiness
 ## *Predicting Employee Attrition and Exploring it's Causes*
 ### Link to Dashboard:
 ---
@@ -6,7 +6,28 @@
 
 ## Why is understanding WHEN and WHY employees quit important?
 
-Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training and improves overall organizational culture and employee sentiment. It is symbiotic, one of the biggest testaments of whether a system is successful and will last.  Focusing on employee retention benefits not just the organization’s success and longevity, but also the employees, so the system continues to feed itself.  And employee attrition affects EVERY industry.
+Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training, and improve overall organizational culture and employee sentiment. It is also symbiotic, which is one of the biggest testaments of whether a system is successful and will last.  Focusing on employee retention benefits not just the organization’s success and longevity, but also the employees, so the system continues to feed itself.  And employee attrition affects EVERY industry.
+
+<img align="left" src="https://github.com/Insmire/Employee_Attrition_Analysis/blob/main/resources/hard_v_soft_costs.png" width="500" />
+According to the Work Institute, most of the cost from employee churn actually comes from hidden or “soft” costs, such as loss of productivity, knowledge and time.  Trading out one employee for another is not an even trade.  As you can see in the graph below, there is a significant amount of time where money is being lost before a new hire starts to produce a return for the company, and an even longer time before they can get to the level of engagement and productivity of the employee whose shoes they are filling.
+</br>
+</br>
+
+When an organization loses an employee, this really equates to approximately 1.5 – 2x the previous employee’s annual salary in hard costs.  Money that could have gone into keeping the employee happy and retaining them. For hourly workers, approximately $1,500, and estimates range based on type of position and seniority.
+
+
+<img align="right" src="https://github.com/Insmire/Employee_Attrition_Analysis/blob/main/resources/employee_cost_to_value.png" width="500" />
+One must consider all the hard and soft costs of failing to retain valuable employees.  During the hiring process, there are costs involved with advertising job openings, interviewing and screening, time and training during onboarding, and loss of productivity, as a new person may take 1-2 years to reach the productivity of the previous employee.  Loss of business, as the new employees are less adept at problem solving and responding to issues, and may actually not even end up being a good fit for the company. Cultural impact.  Whenever someone leaves, others inherently ask why, and no one wants to go down with a sinking ship.  And the stress of understaffing can result in burnout. 
+</br>
+</br>
+
+If employers were able to make a best guess at predicting when their current employees might quit and why, they may be able to intervene in time.
+</br>
+</br>
+
+## Project Overview
+
+
 
 </br>
 </br>
@@ -87,7 +108,7 @@ Using Python's seaborn library and Tableau, trends about the data were uncovered
 </br>
 </br>
 
-## Summary
+## 
 While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks. 
 
 
@@ -107,3 +128,5 @@ While attrition is a problem that effects every industry, use of our predictive 
 ##### Link to Presentation Slides
 https://docs.google.com/presentation/d/1GCnuq3QFD7YBTuNLOd9c_YpS5zzCBbDL3zUX_teldi0/edit?usp=sharing
 <br>
+
+##### Citations
