@@ -48,11 +48,18 @@ Briefly, we found that younger people and closer to the start of their career we
     - Random Forest
     - Neural Network
 
-- Dashboard
-    - Users can determine whether or not they are likely to stay in their current job by finding in a select number of boxes.
-</br>
-</br>
+#### Dashboard
 
+We completed feature elimination by determining feature importance from the random forest model and also ascertaining the features that are influenced by multiculinearity. We reduced the features to 23 in total for the app which also increases the likelihood of a user to fill out the form in its entirety. We decided to utilize the logistic regression model among all models because it contained the least amount of false negative values during training and testing. The model is then saved and loaded into the app through serialization and de-serialization. 
+
+A key is provided to the user so that every input is numerical. Placeholders within each textbox are values of the first row of the dataset. Eash field is required so that any missing input will be pointed out to the user and data will not be posted to the server until every textbox is filled. The model utilizes user input to calculate the probability of an employee staying compared to leaving and returns the more probable result.
+
+![app_1](https://user-images.githubusercontent.com/96349090/173206749-5a24adeb-58ed-45e8-b70c-fb83d23ef6a9.png)
+![app_2](https://user-images.githubusercontent.com/96349090/173206807-1611bd4d-73b3-49e5-9a6e-ae0b0b7f3632.png)
+
+Example result
+![app_3](https://user-images.githubusercontent.com/96349090/173206846-5063f8fc-246b-4450-a700-d3300e151b86.png)
+</br>
 
 ### Process
 #### Data Source
