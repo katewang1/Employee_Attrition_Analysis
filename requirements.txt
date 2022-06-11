@@ -10,6 +10,7 @@ MarkupSafe==2.1.1
 mkl-fft==1.3.1
 mkl-random @ file:///C:/ci_310/mkl_random_1643050563308/work
 mkl-service==2.4.0
+python-dotenv==0.20.0
 six @ file:///tmp/build/80754af9/six_1644875935023/work
 Werkzeug==2.1.2
 wincertstore==0.2
