@@ -2,10 +2,17 @@
 from flask import Flask, render_template, request, jsonify, redirect
 import pickle
 import algorithm
+from os import getenv
 # from pprint import pprint
+
+# Load environment variables
+load_dotenv()
 
 # boilerplate; create Flask app instance
 app = Flask(__name__)
+
+# Get the connection string for the database
+app.config['aws_rds'] = getenv('aws_rds', '')
 
 # retrieve model from external file
 model_file = "resources/model.pkl"
