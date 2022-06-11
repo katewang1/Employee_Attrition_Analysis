@@ -1,7 +1,7 @@
 # import dependencies
 from flask import Flask, render_template, request, jsonify, redirect
 import pickle
-import algorithm
+import app_info
 from os import getenv
 # from pprint import pprint
 
@@ -32,7 +32,7 @@ def pred():
         html: The homepage which contains textboxes for user input.
     '''
 
-    features_list = algorithm.get_features_list()
+    features_list = app_info.get_features_list()
     return render_template("index_3.html", features_list = features_list)
 
 # create route for prediction result
@@ -50,7 +50,7 @@ def process():
     '''
 
     feature_dict = {}
-    features_list = algorithm.get_features_list()
+    features_list = app_info.get_features_list()
     for feature in features_list:
         feature_dict[feature[0]] = request.form[feature[0]]
     # pprint(feature_dict)
@@ -59,7 +59,7 @@ def process():
         # print("features_array is ", features_array, type(features_array))
         pred_proba = model.predict_proba(features_array)
         # print("prediction is", pred_proba, type(pred_proba))
-        result_string = algorithm.result(pred_proba)
+        result_string = app_info.result(pred_proba)
         # print(result_string)
         return jsonify(result_string)
     
