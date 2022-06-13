@@ -131,13 +131,13 @@ We considered which features were in control of the organization and debated whe
 </br>
 
 
-
 ## Findings
-Not shockingly, the data is telling us that those who are 
-that those who are more likely to leave to pursue other opportunities are younger and in the beginning their careers.
-Briefly, we found that younger people and closer to the start of their career were more likley to leave their job.
-</br>
-</br>
+Not shockingly, the data is telling us that those who are paid more generally make more money.  C.R.E.A.M.  But we did notice a few more interesting patterns about the income data when compared to outside data.  (Discuss importance of employee engagement, include outside visualizations)
+
+We found that younger employees and employees and closer to the start of their career were more likley to leave their job, likely to leave to pursue other opportunities in the beginning their careers. (Discuss findings of visualizations more in depth).
+
+(Discuss overtime and Distance from Home.)
+
 While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks. 
 
 
