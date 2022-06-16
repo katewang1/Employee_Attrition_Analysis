@@ -144,11 +144,11 @@ While attrition is a problem that effects every industry, use of our predictive 
 ### Resources
 - Data source: IBM_employee_data.csv (located in "resources" folder)
 - Software: 
-    - Jupyter Notebook
-    - pgAdmin (add versions later)
-    - AWS/RDS
-    - VS Code
-    - Tableau
+    - Jupyter Notebook 6.4.6
+    - pgAdmin 11.14
+    - Amazon Web Service - RDS 
+    - VS Code 1.68.0
+    - Tableau Public
     
 ### Citations
 
