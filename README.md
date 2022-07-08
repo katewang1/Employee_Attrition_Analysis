@@ -53,14 +53,14 @@ Three machine learning models were created, tested and optimized to determine th
 
 ### Logistic Regression Model
 
-The purpose of the model was to predict whether an employee will stay or leave their current job.  The model predicted at 75.47% accuracy. The classification report is below. 
+The purpose of the model was to predict whether an employee will stay or leave their current job.  The model predicted at 75.47% accuracy. The classification report is below:
 
 ![](resources/logReg_classificationReport.png)
 
 ### Random Forest
 
-we used this model both because it is good for binary classification as well as the fact that it could determine feature importance which we weould use in the exploratory analysis. it ended up with an 84% accuracy but due to the high number of false negatives we did not end up using this model.
-The classification report, confusion matrix and feture importance can be seen below.
+We used this model because it is good for binary classification, and for it's ability to determine feature importance, which we planned to use to guide our exploratory analysis. It ended up with an 84% accuracy, but due to the high number of false negatives, we did not end up using this model.
+The classification report, confusion matrix and feature importance can be seen below:
 
 <img width="474" alt="Screen Shot 2022-06-08 at 9 22 45 PM" src="https://user-images.githubusercontent.com/39388246/172763604-93cce0e3-6191-4861-a8d3-ddfd470ceed9.png">
 
@@ -70,13 +70,13 @@ The classification report, confusion matrix and feture importance can be seen be
 
 
 ### Neural Network
-The Neural network we ended with used 2 layers as well as an ouput layer. The Keras sequential model was used along with 3 layers using the sigmoid activation functoin, as it is the best for binary classification. it ended with a 87.41% accuracy with a loss of 1.97 so it performed extremely well. However given it was completed late in the process and we were unabl to get the breakdown of false positives and negatives we did not use this on the website.
+The Neural network we ended with used 2 layers, as well as an ouput layer. The Keras sequential model was used, along with 3 layers using the sigmoid activation function, as it is best for binary classification. The model ended with a 87.41% accuracy and with a loss of 1.97, so it performed extremely well. However, given it was completed late in the process, we were unable to get the breakdown of false positives and negatives.  We also did not go with this model for use on our website.
 </br>
 </br>
 
 ## Dashboard
 
-We completed feature elimination by determining feature importance from the random forest model and also ascertaining the features that are influenced by multiculinearity. We reduced the features to 23 in total for the app which also increases the likelihood of a user to fill out the form in its entirety. We decided to utilize the logistic regression model among all models because it contained the least amount of false negative values during training and testing. The model is then saved and loaded into the app through serialization and de-serialization. 
+We decided on which features to eliminate for the website by determining feature importance from the random forest model, ruling out features that bared little weight on the models, and by ascertaining which features were most influenced by multiculinearity. We reduced the features to 23 in total for the app, which also increased the likelihood of a user filling out the form in its entirety. We decided to utilize the logistic regression model out of the three tested models, because it contained the least amount of false negative values during training and testing. The model is then saved and loaded into the app through serialization and de-serialization. 
 
 A key is provided to the user so that every input is numerical. Placeholders within each textbox are values of the first row of the dataset. Eash field is required so that any missing input will be pointed out to the user and data will not be posted to the server until every textbox is filled. The model utilizes user input to calculate the probability of an employee staying compared to leaving and returns the more probable result.
 
@@ -124,7 +124,6 @@ We considered which features were in control of the organization and debated whe
 </br>
 </br>
 
-
 ### Distance From Home vs. Attrition
 ![](Exploratory_Analysis/images/distance_tableau.png)
 </br>
@@ -132,11 +131,13 @@ We considered which features were in control of the organization and debated whe
 
 
 ## Findings
-Not shockingly, the data is telling us that those who are paid more generally make more money.  C.R.E.A.M.  But we did notice a few more interesting patterns about the income data when compared to outside data.  (Discuss importance of employee engagement, include outside visualizations)
+Not shockingly, the data is telling us that those who are paid more generally make more money.  C.R.E.A.M.  But we did notice more interesting patterns about the income data when compared to outside data.  (Discuss importance of employee engagement, include outside visualizations)
 
 We found that younger employees and employees and closer to the start of their career were more likley to leave their job, likely to leave to pursue other opportunities in the beginning their careers. (Discuss findings of visualizations more in depth).
 
 (Discuss overtime and Distance from Home.)
+
+Absense of false negatives were important to us in this case, because we wanted to ensure no employees were slipping through the cracks.  Sensitivity more imprtant than precision. 
 
 While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks. 
 
@@ -148,9 +149,16 @@ While attrition is a problem that effects every industry, use of our predictive 
     - pgAdmin 11.14
     - Amazon Web Service - RDS 
     - VS Code 1.68.0
-    - Tableau Public
+    - Tableau Public 2022.1
+    - Google Slides
     
 ### Citations
+
+1) *Experienced well-being rises with income, even above $75,000 per year*, pnas.org; Matthew A. Killingswortha, Published November 14, 2020.
+2) *How Employee Engagement Drives Growth*, gallup.com; Susan Sorenson, Published June 20th, 2013.
+3) *Remote Workers Report More Job Unhappiness, Especially Gen Z*, civicscience.com; Danielle Commisso; Published February 8, 2022. 
+4) *Employee Retention Now a Big Issue: Why the Tide has Turned*, linkedin.com; Josh Bersin; Published on August 16, 2013.
+5) *To Have and to Hold: Amid one of the tightest labor markets in the past 50 years, employee retention is more critical than ever*, shrm.org; Theresa Agovino; Published February 23, 2019.
 
 ### Link to Presentation Slides
 https://docs.google.com/presentation/d/1GCnuq3QFD7YBTuNLOd9c_YpS5zzCBbDL3zUX_teldi0/edit?usp=sharing
