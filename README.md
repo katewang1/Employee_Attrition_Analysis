@@ -35,9 +35,9 @@ Our analysis and predictions can assist employers with getting to the root of em
 
 
 ## Data Cleaning and Preparing For Machine Learning
-The data came to us quite clean and not very many actions were needed to clean it. Columns with ambiguously explained data, unique identifiers, and with values that were the same throughout each rows were dropped. 
+The data came to us quite clean and not very many actions were needed to clean it. Columns with ambiguously explained data, unique identifiers, and data with values that were the same throughout each row were dropped. 
 
-To prepare the data for machine learning, the categorical data was first encoded. There was evidence of multicollinearity, which is when 2 or more of the features are highly correlated to each other. To address this issue, four more columns were dropped. The non-encoded columns were then standardized.
+To prepare the data for machine learning, the categorical data was first encoded using one hot encoding. We later went back and re-encoded the data using label encoding, to increase aesthetics and ease for webpage deployment.  There was evidence of multicollinearity, which is when two or more of the features are highly correlated to each other. To address this issue, four more columns were dropped. The non-encoded columns were then standardized.
 
 ![](Machine_Learning/correlation_heatmap.png)
 </br>
@@ -46,14 +46,14 @@ To prepare the data for machine learning, the categorical data was first encoded
 
 ## Machine Learning
 
-Three machine learning models were created, tested and optimized to determine the best fit for our website deployment: Logistic Regression, Random Forest and Neural Network models.
+Three machine learning models were created, tested and optimized to determine the best fit for our website deployment: Logistic Regression, Random Forest and Neural Network models:
 </br>
 </br>
 
 
 ### Logistic Regression Model
 
-The purpose of the model was to predict whether an employee will stay or leave their current job.  The model predicted at 75.47% accuracy. The classification report is below:
+The purpose of the model was to predict whether an employee will stay or leave their current job given various demographics, HR information and answers to questionairres.  The model predicted at 75.47% accuracy. The classification report is below:
 
 ![](resources/logReg_classificationReport.png)
 
@@ -70,7 +70,9 @@ The classification report, confusion matrix and feature importance can be seen b
 
 
 ### Neural Network
-The Neural network we ended with used 2 layers, as well as an ouput layer. The Keras sequential model was used, along with 3 layers using the sigmoid activation function, as it is best for binary classification. The model ended with a 87.41% accuracy and with a loss of 1.97, so it performed extremely well. However, given it was completed late in the process, we were unable to get the breakdown of false positives and negatives.  We also did not go with this model for use on our website.
+The Neural network we ended with used two layers, as well as an ouput layer. The Keras sequential model was used, along with three layers using the sigmoid activation function, as it is best for binary classification. The model ended with a 87.41% accuracy and with a loss of 1.97, so it performed extremely well. However, given it was completed late in the process, we were unable to get the breakdown of false positives and negatives.  We did not go with this model for use on our website.
+
+The absense of false negatives were important to us in this case, because we wanted to ensure no employees were slipping through the cracks.  We chose to utilize our linear regression model due to it's performance in terms of model sensitivity (i.e. it's ability to catch all true 1s).
 </br>
 </br>
 
@@ -89,7 +91,7 @@ Example result
 </br>
 
 ## Exploratory Data Analysis
-One of the first things we noticed about our data was that it was compromised of mostly two different categories: work-related features, meaning factors that the organization could manage or adjust, and personal features that the organization has no control over, such as age or marital status.  Based on the random forest’s feature importance classifications, we decided to dig deeper into the top 6 highly weighted features, and a few of their correlated features.
+One of the first things we noticed about our data, was that it was compromised of mostly two different categories: work-related features, meaning factors that the organization could manage or adjust, and personal features, that the organization has no control over, such as age or marital status.  Based on the random forest’s feature importance classifications, we decided to dig deeper into the top 6 highly weighted features, and a few of their correlated features.
 
 Our random forest model's feature importance classification determined income, age, whether an employee was working overtime, their years at the company, the employee's total working years, and their distance from home to work to be the most heavily weighted or important features in predicting attrition.
 
@@ -97,12 +99,12 @@ We considered which features were in control of the organization and debated whe
 </br>
 </br>
 
-## Income vs. Attrition
+### Income vs. Attrition
 ![](Exploratory_Analysis/images/incomevattrition_tableau.png)
 </br>
 </br>
 
-## Percent Salary Hike vs. Attrition
+### Percent Salary Hike vs. Attrition
 ![](Exploratory_Analysis/images/Salaryhike_barplot.png)
 
 ### Age Vs. Attrition
@@ -131,16 +133,32 @@ We considered which features were in control of the organization and debated whe
 
 
 ## Findings
-Not shockingly, the data is telling us that those who are paid more generally make more money.  C.R.E.A.M.  But we did notice more interesting patterns about the income data when compared to outside data.  (Discuss importance of employee engagement, include outside visualizations)
+Not shockingly, our data shows that employees who made the highest income had the lowest numbers of attrition.  C.R.E.A.M.  However, as you can see in the visualization above, though the majority of the those who quit were in the lower income ranges, majority of all employees fall within the lower monthly income ranges, whether they quit or not.  For example, the $2,000 monthly income bin has the highest count of attrition at 95, but this accounts for only 17% of all employees in the $2,000 montly income bin.  
+
+This demonstrates a potential outside influence that does not accurately portray the trend of more income = less quitting, at least not for truly understanding the reason for quitting. Furthermore, those who have been with the company longer are likely older, more senior, and likely make more money becuase of this, so the income feature may have been pulled in a similar direction to age, number of working years, or years with company for any of those confounding reasons. We noticed some interesting income patterns when comparing with outside data.
+
+<img align="left" src="https://github.com/showkatewang/Employee_Attrition_Analysis/blob/main/resources/income_v_welbeing.png" width="450"/>
+Life satisfaction and experienced well-being appear to momentarily plateau around the $75,000 annual salary mark.  
+
+<img align="right" src="https://github.com/showkatewang/Employee_Attrition_Analysis/blob/main/resources/gallup_engagement.png" width="450"/>
+(Discuss importance of employee engagement)
+(Discuss overtime and Distance from Home.)
 
 We found that younger employees and employees and closer to the start of their career were more likley to leave their job, likely to leave to pursue other opportunities in the beginning their careers. (Discuss findings of visualizations more in depth).
 
-(Discuss overtime and Distance from Home.)
+While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks.
+</br>
+</br>
 
-Absense of false negatives were important to us in this case, because we wanted to ensure no employees were slipping through the cracks.  Sensitivity more imprtant than precision. 
+## Considerations For Further Development
+Since the current data is restricted to information from approximately 1,400 individuals in the technological industry, we felt a bit limited by our data.  We would like to bring in more data to improve the models and open up predictions to other fields of work and features.  Employee needs and wants can often change between industries, and generally the more data, the better.  We would like to fine tune the usability of the website versus the machine learning accurancy, since we had to make some sacrifices on both ends for the greater good of the entire project (i.e. balancing accuracy of model and aesthetics/usability of website).  Futher assessing and spending more time working with these trade offs could result in an even better model and website.   
 
-While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks. 
+We would like to introduce qualitative research and data to further expand the employee and management perspective.  There is only so much information that can be gained with data trends.  Dicovering and explaining some of the nuances helps with true understanding and hence properly guided solutions, and helps to avoid being persuaded by potential outliers in the decision making process.  
 
+Configure a timing element for intervention via the website - ex: gathering month of hire and month of attrition via additional data
+Use of our predictive models and findings are most helpful for large-scale organizations
+</br>
+</br>
 
 ### Resources
 - Data source: IBM_employee_data.csv (located in "resources" folder)
