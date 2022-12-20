@@ -5,7 +5,7 @@
 
 ## Why is understanding WHEN and WHY employees quit important?
 
-Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training, and improve overall organizational culture and employee sentiment. It is also symbiotic, which is one of the biggest testaments of whether a system is successful and will last.  Focusing on employee retention benefits not just the organization’s success and longevity, but also the employees, so the system continues to feed itself.  And employee attrition affects EVERY industry.
+Intimately understanding employee attrition and its causes empowers organizations from any sector to retain the most skilled workers, save on costly training, and improve overall organizational culture and employee sentiment. It is also symbiotic, which is one of the biggest testaments of whether a system is successful and will last.  Focusing on employee retention benefits not only the organization’s success and longevity, but also the employees, so the system continues to feed itself.  And employee attrition affects EVERY industry.
 
 <img align="left" src="https://github.com/Insmire/Employee_Attrition_Analysis/blob/main/resources/hard_v_soft_costs.png" width="500" />
 
