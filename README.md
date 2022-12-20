@@ -9,11 +9,11 @@ Intimately understanding employee attrition and its causes empowers organization
 
 <img align="left" src="https://github.com/Insmire/Employee_Attrition_Analysis/blob/main/resources/hard_v_soft_costs.png" width="500" />
 
-According to the Work Institute, most of the cost from employee churn actually comes from hidden or “soft” costs, such as loss of productivity, knowledge and time.  Trading out one employee for another is not an even trade.  As you can see in the graph below, there is a significant amount of time where money is being lost before a new hire starts to produce a return for the company, and an even longer time before they can get to the level of engagement and productivity of the employee whose shoes they are filling.
+According to the Work Institute, most of the cost of employee churn comes from hidden or “soft” costs, such as loss of productivity, knowledge, and time.  Trading out one employee for another is not an even trade.  As you can see in the graph below, there is a significant amount of time where money is being lost before a new hire starts to produce a return for the company and an even longer time before they can get to the level of engagement and productivity of the employee whose shoes they are filling.
 </br>
 </br>
 
-When an organization loses an employee, this really equates to approximately 1.5 – 2x the previous employee’s annual salary in hard costs.  Money that could have gone into keeping the employee happy and retaining them. For hourly workers, approximately $1,500, and estimates range based on type of position and seniority.
+When an organization loses an employee, this equates to approximately 1.5 – 2x the previous employee’s annual salary in hard costs.  Money that could have gone into keeping the employee happy and retaining them. For hourly workers, approximately $1,500, and estimates range based on the type of position and seniority.
 
 
 <img align="right" src="https://github.com/Insmire/Employee_Attrition_Analysis/blob/main/resources/employee_cost_to_value.png" width="500" />
@@ -163,7 +163,7 @@ Use of our predictive models and findings are most helpful for large-scale organ
 
 ### Resources
 - Data source: 
-    - IBM_employee_data.csv (located in "resources" folder)
+    - IBM_employee_data.csv (located in the "resources" folder)
 - Software: 
     - Jupyter Notebook 6.4.6
     - pgAdmin 11.14
@@ -174,7 +174,7 @@ Use of our predictive models and findings are most helpful for large-scale organ
     
 ### Citations
 
-1) *Experienced well-being rises with income, even above $75,000 per year*, pnas.org; Matthew A. Killingswortha, Published November 14, 2020.
+1) *Experienced well-being rises with income, even above $75,000 per year*, pnas.org; Matthew A. Killingsworth, Published November 14, 2020.
 2) *How Employee Engagement Drives Growth*, gallup.com; Susan Sorenson, Published June 20th, 2013.
 3) *Remote Workers Report More Job Unhappiness, Especially Gen Z*, civicscience.com; Danielle Commisso; Published February 8, 2022. 
 4) *Employee Retention Now a Big Issue: Why the Tide has Turned*, linkedin.com; Josh Bersin; Published on August 16, 2013.
