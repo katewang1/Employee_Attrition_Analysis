@@ -18,7 +18,7 @@ When an organization loses an employee, this equates to approximately 1.5 – 2x
 
 <img align="right" src="https://github.com/Insmire/Employee_Attrition_Analysis/blob/main/resources/employee_cost_to_value.png" width="500" />
 
-One must consider all the hard and soft costs of failing to retain valuable employees.  During the hiring process, there are costs involved with advertising job openings, interviewing and screening, time and training during onboarding, and loss of productivity, as a new person may take 1-2 years to reach the productivity of the previous employee.  Loss of business, as the new employees are less adept at problem-solving and responding to issues, and may actually not even end up being a good fit for the company. Cultural impact.  Whenever someone leaves, others inherently ask why, and no one wants to go down with a sinking ship.  And the stress of understaffing can result in burnout. 
+One must consider all the hard and soft costs of failing to retain valuable employees.  During the hiring process, there are costs involved with advertising job openings, interviewing and screening, time and training during onboarding, and loss of productivity, as a new person may take 1-2 years to reach the productivity of the previous employee.  Loss of business, as the new employees are less adept at problem-solving and responding to issues, and may not even end up being a good fit for the company. Cultural impact.  Whenever someone leaves, others inherently ask why, and no one wants to go down with a sinking ship.  And the stress of understaffing can result in burnout. 
 </br>
 </br>
 
@@ -39,7 +39,7 @@ Our analysis and predictions can assist employers with getting to the root of em
 ## Data Cleaning and Preparing For Machine Learning
 The data came to us quite clean and not very many actions were needed to clean it. Columns with ambiguously explained data, unique identifiers, and data with values that were the same throughout each row were dropped. 
 
-To prepare the data for machine learning, the categorical data was first encoded using one hot encoding. We later went back and re-encoded the data using label encoding, to increase aesthetics and ease for webpage deployment.  There was evidence of multicollinearity, which is when two or more of the features are highly correlated to each other. To address this issue, four more columns were dropped. The non-encoded columns were then standardized.
+To prepare the data for machine learning, the categorical data was first encoded using one hot encoding. We later went back and re-encoded the data using label encoding, to increase aesthetics and ease of webpage deployment.  There was evidence of multicollinearity, which is when two or more of the features are highly correlated to each other. To address this issue, four more columns were dropped. The non-encoded columns were then standardized.
 
 ![](Machine_Learning/correlation_heatmap.png)
 </br>
