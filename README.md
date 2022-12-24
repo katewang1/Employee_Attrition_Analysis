@@ -48,7 +48,7 @@ To prepare the data for machine learning, the categorical data was first encoded
 
 ## Machine Learning
 
-Three machine learning models were created, tested and optimized to determine the best fit for our website deployment: Logistic Regression, Random Forest and Neural Network models:
+Three machine learning models were created, tested, and optimized to determine the best fit for our website deployment: Logistic Regression, Random Forest, and Neural Network models:
 </br>
 </br>
 
