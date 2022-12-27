@@ -55,7 +55,7 @@ Three machine learning models were created, tested, and optimized to determine t
 
 ### Logistic Regression Model
 
-The purpose of the model was to predict whether an employee will stay or leave their current job given various demographics, HR information and answers to questionairres.  The model predicted at 75.47% accuracy. The classification report is below:
+The purpose of the model was to predict whether an employee will stay or leave their current job given various demographics, HR information, and answers to questionnaires.  The model predicted an outcome with 75.47% accuracy. The classification report is below:
 
 ![](resources/logReg_classificationReport.png)
 
