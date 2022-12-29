@@ -61,8 +61,8 @@ The purpose of the model was to predict whether an employee will stay or leave t
 
 ### Random Forest
 
-We used this model because it is good for binary classification, and for it's ability to determine feature importance, which we planned to use to guide our exploratory analysis. It ended up with an 84% accuracy, but due to the high number of false negatives, we did not end up using this model.
-The classification report, confusion matrix and feature importance can be seen below:
+We used this model because it is good for binary classification, and for its ability to determine feature importance, which we planned to use to guide our exploratory analysis. It ended up with an 84% accuracy, but due to the high number of false negatives, we did not end up using this model.
+The classification report, confusion matrix, and feature importance can be seen below:
 
 <img width="474" alt="Screen Shot 2022-06-08 at 9 22 45 PM" src="https://user-images.githubusercontent.com/39388246/172763604-93cce0e3-6191-4861-a8d3-ddfd470ceed9.png">
 
