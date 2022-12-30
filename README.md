@@ -72,9 +72,9 @@ The classification report, confusion matrix, and feature importance can be seen 
 
 
 ### Neural Network
-The Neural network we ended with used two layers, as well as an ouput layer. The Keras sequential model was used, along with three layers using the sigmoid activation function, as it is best for binary classification. The model ended with a 87.41% accuracy and with a loss of 1.97, so it performed extremely well. However, given it was completed late in the process, we were unable to get the breakdown of false positives and negatives.  We did not go with this model for use on our website.
+The Neural network we ended with used two layers, as well as an output layer. The Keras sequential model was used, along with three layers using the sigmoid activation function, as it is best for binary classification. The model ended with an 87.41% accuracy and with a loss of 1.97, so it performed extremely well. However, given it was completed late in the process, we were unable to get the breakdown of false positives and negatives.  We did not go with this model for use on our website.
 
-The absense of false negatives were important to us in this case, because we wanted to ensure no employees were slipping through the cracks.  We chose to utilize our linear regression model due to it's performance in terms of model sensitivity (i.e. it's ability to catch all true 1s).
+The absence of false negatives was important to us in this case because we wanted to ensure no employees were slipping through the cracks.  We chose to utilize our linear regression model due to its performance in terms of model sensitivity (i.e. its ability to catch all true 1s).
 </br>
 </br>
 
