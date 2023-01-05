@@ -97,7 +97,7 @@ One of the first things we noticed about our data, was that it was compromised o
 
 Our random forest model's feature importance classification determined income, age, whether an employee was working overtime, their years at the company, the employee's total working years, and their distance from home to work to be the most heavily weighted or important features in predicting attrition.
 
-We considered which features were in control of the organization and debated whether to include exploration of age and total working years, but due to the way those features interplayed with other features, and findings from external data that note how an employee's needs may change based on age, we decided to further explore all of the top six important features and a few additional visualizations to show a more complete story of the data. Using Python's Seaborn library and Tableau, trends about the data were uncovered:
+We considered which features were in control of the organization and debated whether to include exploration of age and total working years, but due to the way those features interplayed with other features and findings from external data that note how an employee's needs may change based on age, we decided to further explore all of the top six important features and a few additional visualizations to show a more complete story of the data. Using Python's Seaborn library and Tableau, trends in the data were uncovered:
 </br>
 </br>
 
