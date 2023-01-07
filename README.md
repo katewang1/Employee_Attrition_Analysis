@@ -142,12 +142,12 @@ This demonstrates a potential outside influence that does not accurately portray
 Life satisfaction and experienced well-being appear to momentarily plateau around the $75,000 annual salary mark.  
 
 <img align="right" src="https://github.com/showkatewang/Employee_Attrition_Analysis/blob/main/resources/gallup_engagement.png" width="450"/>
-(Discuss importance of employee engagement)
-(Discuss overtime and Distance from Home.)
+<!-- (Discuss the importance of employee engagement)
+(Discuss overtime and Distance from Home.) -->
 
-We found that younger employees and employees and closer to the start of their career were more likley to leave their job, likely to leave to pursue other opportunities in the beginning their careers. (Discuss findings of visualizations more in depth).
+We found that younger employees and employees closer to the start of their careers were more likely to leave their job, likely to leave to pursue other opportunities at the beginning of their careers. <!-- (Discuss findings of visualizations more in-depth). -->
 
-While attrition is a problem that effects every industry, use of our predictive models and findings are most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks.
+While attrition is a problem that affects every industry, the use of our predictive models and findings is most helpful for large-scale organizations, where individual sentiment often flies under the radar and employees fall through the cracks.
 </br>
 </br>
 
