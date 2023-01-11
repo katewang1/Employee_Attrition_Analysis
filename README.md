@@ -154,10 +154,10 @@ While attrition is a problem that affects every industry, the use of our predict
 ## Considerations For Further Development
 Since the current data is restricted to information from approximately 1,400 individuals in the technological industry, we felt a bit limited by our data.  We would like to bring in more data to improve the models and open up predictions to other fields of work and features.  Employee needs and wants can often change between industries, and generally the more data, the better.  We would like to fine-tune the usability of the website versus the machine learning accuracy since we had to make some sacrifices on both ends for the greater good of the entire project (i.e. balancing the accuracy of the model and aesthetics/usability of the website).  Further assessing and spending more time working with these trade-offs could result in an even better model and website.   
 
-We would like to introduce qualitative research and data to further expand the employee and management perspective.  There is only so much information that can be gained with data trends.  Dicovering and explaining some of the nuances helps with true understanding and hence properly guided solutions, and helps to avoid being persuaded by potential outliers in the decision making process.  
+We would like to introduce qualitative research and data to further expand the employee and management perspective.  There is only so much information that can be gained with data trends.  Discovering and explaining some of the nuances helps with true understanding and hence properly guided solutions, and helps to avoid being persuaded by potential outliers in the decision-making process.  
 
-Configure a timing element for intervention via the website - ex: gathering month of hire and month of attrition via additional data
-Use of our predictive models and findings are most helpful for large-scale organizations
+Configure a timing element for intervention via the website - ex: gathering month of hire and month of attrition via additional data.
+The use of our predictive models and findings is most helpful for large-scale organizations
 </br>
 </br>
 
