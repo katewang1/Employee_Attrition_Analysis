@@ -15,7 +15,6 @@ According to the Work Institute, most of the cost of employee churn comes from h
 
 When an organization loses an employee, this equates to approximately 1.5 – 2x the previous employee’s annual salary in hard costs.  Money that could have gone into keeping the employee happy and retaining them. For hourly workers, approximately $1,500, and estimates range based on the type of position and seniority.
 
-
 <img align="right" src="https://github.com/Insmire/Employee_Attrition_Analysis/blob/main/resources/employee_cost_to_value.png" width="500" />
 
 One must consider all the hard and soft costs of failing to retain valuable employees.  During the hiring process, there are costs involved with advertising job openings, interviewing and screening, time and training during onboarding, and loss of productivity, as a new person may take 1-2 years to reach the productivity of the previous employee.  Loss of business, as the new employees are less adept at problem-solving and responding to issues, and may not even end up being a good fit for the company. Cultural impact.  Whenever someone leaves, others inherently ask why, and no one wants to go down with a sinking ship.  And the stress of understaffing can result in burnout. 
@@ -26,7 +25,6 @@ If employers were able to make an educated guess at predicting when their curren
 </br>
 </br>
 
-
 ## Project Overview
 
 For our project, we created and tested a few different machine learning models to predict whether an employee is likely to quit based on various features, then deployed the model to be used by employers on our website.  We continued to explore the data based on the most highly weighted features, as determined by our random forest model’s feature importance classification.  Data exploration began with SQL queries, but visualizations developed in Tableau and from Python's Seaborn provided the most insight into our data's attrition trends, which can be used to assist organizations with developing possible solutions. 
@@ -34,7 +32,6 @@ For our project, we created and tested a few different machine learning models t
 Our analysis and predictions can assist employers with getting to the root of employee grievances and what makes them stay, guide management on timing for engagement with their employees, raises or role restructuring, and improve the workplace environment for the employees. 
 </br>
 </br>
-
 
 ## Data Cleaning and Preparing For Machine Learning
 The data came to us quite clean and not very many actions were needed to clean it. Columns with ambiguously explained data, unique identifiers, and data with values that were the same throughout each row were dropped. 
@@ -45,13 +42,11 @@ To prepare the data for machine learning, the categorical data was first encoded
 </br>
 </br>
 
-
 ## Machine Learning
 
 Three machine learning models were created, tested, and optimized to determine the best fit for our website deployment: Logistic Regression, Random Forest, and Neural Network models:
 </br>
 </br>
-
 
 ### Logistic Regression Model
 
@@ -69,7 +64,8 @@ The classification report, confusion matrix, and feature importance can be seen 
 <img width="737" alt="Screen Shot 2022-06-08 at 9 23 05 PM" src="https://user-images.githubusercontent.com/39388246/172763631-edd181e5-919e-4dd1-8582-426409a19899.png">
 
 <img width="113" alt="Screen Shot 2022-06-08 at 9 30 44 PM" src="https://user-images.githubusercontent.com/39388246/172764451-6616b3eb-6d6e-4492-b802-50b962920bf2.png">
-
+</br>
+</br>
 
 ### Neural Network
 The Neural network we ended with used two layers, as well as an output layer. The Keras sequential model was used, along with three layers using the sigmoid activation function, as it is best for binary classification. The model ended with an 87.41% accuracy and with a loss of 1.97, so it performed extremely well. However, given it was completed late in the process, we were unable to get the breakdown of false positives and negatives.  We did not go with this model for use on our website.
@@ -115,7 +111,6 @@ We considered which features were in control of the organization and debated whe
 ### Total Working Years vs. Attrition
 ![](Exploratory_Analysis/images/workingYrsVSattrition.png)
 </br>
-</br>
 
 ### Number of Companies Worked For vs. Attrition
 ![](Exploratory_Analysis/images/NumCompaniesWorked_barplot.png)
@@ -126,11 +121,9 @@ We considered which features were in control of the organization and debated whe
 ### Overtime vs. Attrition
 ![](Exploratory_Analysis/images/overtime_tableau.png)
 </br>
-</br>
 
 ### Distance From Home vs. Attrition
 ![](Exploratory_Analysis/images/distance_tableau.png)
-</br>
 </br>
 
 ## Findings
@@ -139,11 +132,20 @@ Not shockingly, our data shows that employees who made the highest income had th
 This demonstrates a potential outside influence that does not accurately portray the trend of more income = less quitting, at least not for truly understanding the reason for quitting. Furthermore, those who have been with the company longer are likely older, more senior, and likely make more money because of this, so the income feature may have been pulled in a similar direction to age, number of working years, or years with the company for any of those confounding reasons. We noticed some interesting income patterns when comparing them with outside data.
 
 <img align="left" src="https://github.com/showkatewang/Employee_Attrition_Analysis/blob/main/resources/income_v_welbeing.png" width="450"/>
-Life satisfaction and experienced well-being appear to momentarily plateau around the $75,000 annual salary mark.  
 
 <img align="right" src="https://github.com/showkatewang/Employee_Attrition_Analysis/blob/main/resources/gallup_engagement.png" width="450"/>
 <!-- (Discuss the importance of employee engagement)
 (Discuss overtime and Distance from Home.) -->
+</br>
+</br>
+</br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+
+Life satisfaction and experienced well-being appear to momentarily plateau around the $75,000 annual salary mark.  
 
 We found that younger employees and employees closer to the start of their careers were more likely to leave their job, likely to leave to pursue other opportunities at the beginning of their careers. <!-- (Discuss findings of visualizations more in-depth). -->
 
@@ -161,7 +163,7 @@ The use of our predictive models and findings is most helpful for large-scale or
 </br>
 </br>
 
-### Resources
+## Resources
 - Data source: 
     - IBM_employee_data.csv (located in the "resources" folder)
 - Software: 
@@ -171,8 +173,8 @@ The use of our predictive models and findings is most helpful for large-scale or
     - VS Code 1.68.0
     - Tableau Public 2022.1
     - Google Slides
-    
-### Citations
+
+## Citations
 
 1) *Experienced well-being rises with income, even above $75,000 per year*, pnas.org; Matthew A. Killingsworth, Published November 14, 2020.
 2) *How Employee Engagement Drives Growth*, gallup.com; Susan Sorenson, Published June 20th, 2013.
@@ -180,5 +182,5 @@ The use of our predictive models and findings is most helpful for large-scale or
 4) *Employee Retention Now a Big Issue: Why the Tide has Turned*, linkedin.com; Josh Bersin; Published on August 16, 2013.
 5) *To Have and to Hold: Amid one of the tightest labor markets in the past 50 years, employee retention is more critical than ever*, shrm.org; Theresa Agovino; Published February 23, 2019.
 
-### Link to Presentation Slides
+## Link to Presentation Slides
 https://docs.google.com/presentation/d/1GCnuq3QFD7YBTuNLOd9c_YpS5zzCBbDL3zUX_teldi0/edit?usp=sharing
